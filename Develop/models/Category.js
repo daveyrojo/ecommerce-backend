@@ -17,15 +17,6 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    products: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'product',
-        key: 'id',
-        unqiue: false
-      }
-    },
   },
   {
     sequelize,
