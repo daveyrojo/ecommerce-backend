@@ -30,9 +30,13 @@ router.get('/:id', async (req, res) => {
 });
 
 // create new product
-//dpne
+//done
 router.post('/', (req, res) => {
-
+// { 
+//    price: req.body.price,
+//    stock: req.body.price, // do I need to replace req.body in line 40 with this?
+//    category_id: red.body.category_id
+//  }
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
