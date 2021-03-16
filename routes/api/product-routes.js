@@ -37,7 +37,11 @@ router.post('/', (req, res) => {
 //    stock: req.body.price, // do I need to replace req.body in line 40 with this?
 //    category_id: red.body.category_id
 //  }
-  Product.create(req.body)
+  Product.create({
+    product_name: req.body.product_name,
+    price: req.body.price,
+    stock: req.body.stock
+  })
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
